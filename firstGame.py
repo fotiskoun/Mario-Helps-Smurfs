@@ -119,8 +119,7 @@ class Boss(object):
         if self.x > SCREEN_WIDTH - boss_width:
             self.x -= self.moveSpeed_x
             self.rect.x -= self.moveSpeed_x
-        #self.y += random.randint(-1, 1)*self.moveSpeed_y tuxaia kinhsh!! pou 8elei oria panw katw
-        #pseudotuxaia kinhsh
+
         self.y += kinhsh*self.moveSpeed_y
         self.rect.y += kinhsh*self.moveSpeed_y
 
@@ -325,8 +324,6 @@ while 1:
                         
 
     for each in enemiesList:
-        #pygame.draw.rect(screen,black,each)
-        #screen.fill(black, each)
         screen.blit(stageEnemies[0],each)
     moveEnemies(enemiesList)
     dead=deadEnemy(enemiesList)
