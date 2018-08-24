@@ -1,4 +1,4 @@
-import pygame,sys,time,random,math,numpy
+import pygame,sys,time,random,math
 from pygame.locals import *
 pygame.init()
 
@@ -244,7 +244,6 @@ boss = Boss()
 while 1:
     rounds+=1
    
-    
     if pygame.event.get(pygame.QUIT): pygame.quit(); sys.exit(0)
     screen.blit(bg, (0, 0))
     x1 -= 5
@@ -320,8 +319,7 @@ while 1:
                         bulletsList.remove(bullet)
                     elif azraelBulletHit:
                         azraelLife = boss.lifespan(azraelLife)
-                        scratch_attack = False
-                        
+                        scratch_attack = False      
 
     for each in enemiesList:
         screen.blit(stageEnemies[0],each)
@@ -334,7 +332,6 @@ while 1:
         del enemiesList[hit[0]]
         score-=20
     
-
     level = heroLevel(score)
 
     if score < 0:
@@ -347,8 +344,5 @@ while 1:
         winText = font.render("You WOOOOON", 1, black)
         screen.blit(winText, (SCREEN_WIDTH/3, SCREEN_HEIGHT/2))
         
-            
-    
-
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(25)
